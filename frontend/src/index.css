@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@theme {
+  --color-obsidian: #000000;
+  --color-obsidian-dark: #0a0a0a;
+  --color-obsidian-card: #121212;
+  
+  --color-cyan-biomed: #00E5FF;
+  --color-violet-neon: #B026FF;
+  
+  --font-heading: "Clash Display", sans-serif;
+  --font-body: Satoshi, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --animation-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animation-ripple: ripple 3s linear infinite;
+  
+  @keyframes ripple {
+    0% { transform: scale(0.8); opacity: 0.8; }
+    100% { transform: scale(2); opacity: 0; }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-obsidian text-white font-body selection:bg-cyan-biomed selection:text-black;
+  }
+}
+
+/* Define glass directly as a class to avoid @apply issues in build */
+.glass {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.glass-cyan {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  box-shadow: 0 25px 50px -12px rgba(0, 229, 255, 0.05);
+}
+
+@layer components {
+  .text-glow-cyan {
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
+  }
+  
+  .text-glow-violet {
+    text-shadow: 0 0 10px rgba(176, 38, 255, 0.4);
+  }
+
+  .btn-primary {
+    @apply px-8 py-4 bg-cyan-biomed text-black font-heading font-bold uppercase tracking-widest hover:bg-white transition-all duration-300 disabled:opacity-50 disabled:bg-white/10 disabled:text-white/30;
+  }
+
+  /* Noise Overlay */
+  .noise {
+    @apply fixed inset-0 pointer-events-none z-[9999] opacity-[0.03];
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-cyan-biomed/40 transition-colors;
+}
+
+@keyframes ripple-wave {
+  0% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(3); opacity: 0; }
+}
+
+.animate-ripple-wave {
+  animation: ripple-wave 2s infinite ease-out;
+}
+
+/* Biometric Ambient Heartbeat (60 BPM) */
+@keyframes heartbeat-normal {
+  0% { background-color: rgba(0, 0, 0, 1); }
+  15% { background-color: rgba(0, 229, 255, 0.03); }
+  30% { background-color: rgba(0, 0, 0, 1); }
+  45% { background-color: rgba(0, 229, 255, 0.05); }
+  100% { background-color: rgba(0, 0, 0, 1); }
+}
+
+/* Elevated Heartbeat (120 BPM) for High Risk */
+@keyframes heartbeat-fast {
+  0% { background-color: rgba(0, 0, 0, 1); }
+  15% { background-color: rgba(176, 38, 255, 0.08); }
+  30% { background-color: rgba(0, 0, 0, 1); }
+  45% { background-color: rgba(176, 38, 255, 0.12); }
+  100% { background-color: rgba(0, 0, 0, 1); }
+}
+
+.animate-heartbeat-normal {
+  animation: heartbeat-normal 1s infinite;
+}
+
+.animate-heartbeat-fast {
+  animation: heartbeat-fast 0.5s infinite;
+}
