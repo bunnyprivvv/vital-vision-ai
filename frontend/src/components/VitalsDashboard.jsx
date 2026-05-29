@@ -332,7 +332,7 @@ const VitalsDashboard = ({ user, onLogout }) => {
           
           <div>
             <div className="flex items-center gap-2 mb-3 text-[10px] font-mono tracking-widest text-white/40 uppercase">
-              <Activity size={12} color={C.cyan-biomed} />
+              <Activity size={12} color="#00E5FF" />
               <span>LIVE BIOMETRIC TELEMETRY</span>
             </div>
             
