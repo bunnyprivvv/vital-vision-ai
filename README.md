@@ -1,11 +1,14 @@
-# VitalsVision AI (VitaScan) | Secure Clinical Diagnostic Core
+# 🔬 VitalsVision AI (VitaScan) | Secure Clinical Diagnostic Core
 
+[![Vercel Deployment](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel&logoColor=white)](https://frontend-lake-nine-62.vercel.app)
 [![FastAPI Engine](https://img.shields.io/badge/AI_Engine-FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![Express Gateway](https://img.shields.io/badge/API_Gateway-Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
 [![React Client](https://img.shields.io/badge/Frontend-React_Vite-00E6FF?style=for-the-badge&logo=react&logoColor=white)](https://vite.dev/)
 [![Docker Environment](https://img.shields.io/badge/Environment-Docker_Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 
 A secure full-stack clinical diagnostic portal integrating computer vision and acoustic signal processing to assist medical practitioners with real-time risk assessment. Built with a modular microservice architecture, VitalsVision AI leverages predictive digital-twin models to evaluate clinical parameters instantaneously.
+
+🌐 **Live Application:** [https://frontend-lake-nine-62.vercel.app](https://frontend-lake-nine-62.vercel.app)
 
 ---
 
